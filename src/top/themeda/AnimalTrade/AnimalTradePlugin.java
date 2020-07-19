@@ -27,10 +27,10 @@ public class AnimalTradePlugin extends JavaPlugin implements Listener{
 	public static Plugin plugin;
 	@Override
 	public void onEnable() {
-		log.info("ก์4ก์m             ก์lก์6[AnimalTrade]ก์4ก์m             ");
-		log.info("ก์4ก์m                ก์lก์cถฏก์lก์bฮ๏ก์lก์6ฝปก์lก์dาืก์4ก์m                   ");
-		log.info("ก์4ก์m                ก์lก์8ีýิฺผำิุก์4ก์m                   ");
-		log.info("ก์4ก์m                ก์lก์7-------ก์4ก์m                   ");
+		log.info("ยง4ยงm             ยงlยง6[AnimalTrade]ยง4ยงm             ");
+		log.info("ยง4ยงm                ยงlยงcๅจยงlยงb็ฉยงlยง6ไบคยงlยงdๆ“ยง4ยงm                   ");
+		log.info("ยง4ยงm                ยงlยง8ๆญฃๅจๅ ่ฝฝยง4ยงm                   ");
+		log.info("ยง4ยงm                ยงlยง7-------ยง4ยงm                   ");
 		plugin = this;
 		Bukkit.getPluginManager().registerEvents(new TradeListener(), this);
 		Bukkit.getPluginManager().registerEvents(new PlayerListener(), this);
@@ -40,20 +40,20 @@ public class AnimalTradePlugin extends JavaPlugin implements Listener{
 			version = 1.12d;
 		}
 		ConfigLoad.outputConfig();
-		this.reloadConfig();
+		ConfigLoad.reloadConfigs();
 		Bukkit.getScheduler().runTaskTimerAsynchronously(this, new SelectedTip(), 20L, 20L);
 		Bukkit.getServer().getPluginCommand("animaltrade").setExecutor(new ParseCommand());
-		log.info("ก์4ก์m                ก์lก์8ผำิุอ๊ณษก์4ก์m                   ");
-		log.info("ก์4ก์m                ก์lก์cถฏก์lก์bฮ๏ก์lก์6ฝปก์lก์dาืก์4ก์m                   ");
-		log.info("ก์4ก์m             ก์lก์6[AnimalTrade]ก์4ก์m             ");
+		log.info("ยง4ยงm                ยงlยง8ๅ ่ฝฝๅฎๆยง4ยงm                   ");
+		log.info("ยง4ยงm                ยงlยงcๅจยงlยงb็ฉยงlยง6ไบคยงlยงdๆ“ยง4ยงm                   ");
+		log.info("ยง4ยงm             ยงlยง6[AnimalTrade]ยง4ยงm             ");
 	}
 	@Override
 	public void onDisable() {
 		HandlerList.unregisterAll();
-		log.info("ก์4ก์m             ก์lก์6[AnimalTrade]ก์4ก์m             ");
-		log.info("ก์4ก์m                ก์lก์cถฏก์lก์bฮ๏ก์lก์6ฝปก์lก์dาืก์4ก์m                   ");
-		log.info("ก์4ก์m                ก์lก์8ะถิุอ๊ณษก์4ก์m                   ");
-		log.info("ก์4ก์m                ก์lก์cถฏก์lก์bฮ๏ก์lก์6ฝปก์lก์dาืก์4ก์m                   ");
-		log.info("ก์4ก์m             ก์lก์6[AnimalTrade]ก์4ก์m             ");
+		log.info("ยง4ยงm             ยงlยง6[AnimalTrade]ยง4ยงm             ");
+		log.info("ยง4ยงm                ยงlยงcๅจยงlยงb็ฉยงlยง6ไบคยงlยงdๆ“ยง4ยงm                   ");
+		log.info("ยง4ยงm                ยงlยง8ๅธ่ฝฝๅฎๆยง4ยงm                   ");
+		log.info("ยง4ยงm                ยงlยงcๅจยงlยงb็ฉยงlยง6ไบคยงlยงdๆ“ยง4ยงm                   ");
+		log.info("ยง4ยงm             ยงlยง6[AnimalTrade]ยง4ยงm             ");
 	}
 }
