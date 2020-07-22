@@ -43,7 +43,7 @@ public class TradeListener implements Listener {
 	}
 	@EventHandler
 	public void onPlayerInteractive(PlayerInteractEntityEvent e) {
-		if(AnimalTradePlugin.version>=1.9d&&e.getHand()==EquipmentSlot.OFF_HAND) {
+		if(e.getHand()==EquipmentSlot.OFF_HAND) {
 			return;
 		}
 		Player p =e.getPlayer();
@@ -68,7 +68,7 @@ public class TradeListener implements Listener {
 				p.sendMessage(ConfigLoad.cfg.getString("Language.NotEnableNow"));
 				return;
 			}
-			String title = ConfigLoad.cfg.getString("Language.TradeTitle","¡ìl¡ìc¶¯¡ìl¡ìbÎï¡ìl¡ì6½»¡ìl¡ìdÒ×");
+			String title = ConfigLoad.cfg.getString("Language.TradeTitle","Â§lÂ§cåŠ¨Â§lÂ§bç‰©Â§lÂ§6äº¤Â§lÂ§dæ˜“");
 			Merchant inv = Bukkit.createMerchant(title);
 			inv.setRecipes(t.getRecipe());
 			p.openMerchant(inv, true);
@@ -84,7 +84,7 @@ public class TradeListener implements Listener {
 			meta = item.getItemMeta();
 		}
 		int slot = e.getRawSlot();
-		String title = ConfigLoad.cfg.getString("Language.GuiTitle","½»Ò×ÉèÖÃ");
+		String title = ConfigLoad.cfg.getString("Language.GuiTitle","äº¤æ˜“è®¾ç½®");
 		if(e.getView().getTitle().equalsIgnoreCase(title)) {
 			if(slot==17) {
 				e.setCancelled(true);
@@ -92,14 +92,14 @@ public class TradeListener implements Listener {
 			}
 			if(slot==44) {
 				e.setCancelled(true);
-				if(meta.getLore().toString().contains("È·ÈÏ")) {
+				if(meta.getLore().toString().contains("ç¡®è®¤")) {
 					Bukkit.getEntity(UUID.fromString(meta.getLocalizedName())).remove();
 					ConfigLoad.db.set(meta.getLocalizedName(), null);
 					ConfigLoad.saveDB();
 					p.closeInventory();
 				}else {
 					List<String> lore = meta.getLore();
-					lore.add("ÔÙ´Îµã»÷ÒÔÈ·ÈÏÉ¾³ı£¡");
+					lore.add("å†æ¬¡ç‚¹å‡»ä»¥ç¡®è®¤åˆ é™¤ï¼");
 					meta.setLore(lore);
 					item.setItemMeta(meta);
 					e.getClickedInventory().setItem(44, item);
@@ -107,7 +107,7 @@ public class TradeListener implements Listener {
 			}
 		}
 		
-		String optiontitle = ConfigLoad.cfg.getString("Language.OptionTitle","ÉèÖÃÊôĞÔ");
+		String optiontitle = ConfigLoad.cfg.getString("Language.OptionTitle","è®¾ç½®å±æ€§");
 		if(e.getView().getTitle().equalsIgnoreCase(optiontitle)) {
 			if(slot==11) {
 				e.setCancelled(true);
@@ -164,7 +164,7 @@ public class TradeListener implements Listener {
 						((LivingEntity)en).getAttribute(Attribute.GENERIC_MOVEMENT_SPEED).setBaseValue(arg);
 						p.sendMessage(ConfigLoad.cfg.getString("Language.EditSuccess"));
 					}else {
-						p.sendMessage(ConfigLoad.cfg.getString("Language.EditFail","[¡ìl¡ìc¶¯¡ìl¡ìbÎï¡ìl¡ì6½»¡ìl¡ìdÒ×¡ìr]:¡ì4ÎŞ·¨ĞŞ¸Ä %arg%").replace("%arg%", "Walk"));
+						p.sendMessage(ConfigLoad.cfg.getString("Language.EditFail","[Â§lÂ§cåŠ¨Â§lÂ§bç‰©Â§lÂ§6äº¤Â§lÂ§dæ˜“Â§r]:Â§4æ— æ³•ä¿®æ”¹ %arg%").replace("%arg%", "Walk"));
 					}
 					lplay.remove(p);
 					Bukkit.getScheduler().runTask(plugin, new Runnable() {
@@ -180,7 +180,7 @@ public class TradeListener implements Listener {
 						((LivingEntity)en2).getAttribute(Attribute.GENERIC_FLYING_SPEED).setBaseValue(arg);
 						p.sendMessage(ConfigLoad.cfg.getString("Language.EditSuccess"));
 					}else {
-						p.sendMessage(ConfigLoad.cfg.getString("Language.EditFail","[¡ìl¡ìc¶¯¡ìl¡ìbÎï¡ìl¡ì6½»¡ìl¡ìdÒ×¡ìr]:¡ì4ÎŞ·¨ĞŞ¸Ä %arg%").replace("%arg%", "Fly"));
+						p.sendMessage(ConfigLoad.cfg.getString("Language.EditFail","[Â§lÂ§cåŠ¨Â§lÂ§bç‰©Â§lÂ§6äº¤Â§lÂ§dæ˜“Â§r]:Â§4æ— æ³•ä¿®æ”¹ %arg%").replace("%arg%", "Fly"));
 					}
 					lplay.remove(p);
 					Bukkit.getScheduler().runTask(plugin, new Runnable() {
