@@ -9,6 +9,10 @@ public class ParseCommand implements CommandExecutor{
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
 		if(args.length!=0) {
 			switch(args[0]) {
+			case"fool":
+				FoolCommand fc = new FoolCommand();
+				fc.parseCommand(sender, args);
+				break;
 			case"cancel":
 				CancelCommand canc = new CancelCommand();
 				canc.parseCommand(sender, args);
