@@ -14,6 +14,7 @@ import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import top.themeda.AnimalTrade.Commands.ParseCommand;
+import top.themeda.AnimalTrade.EventListener.EntityListener;
 import top.themeda.AnimalTrade.EventListener.PlayerListener;
 import top.themeda.AnimalTrade.EventListener.TradeListener;
 
@@ -34,6 +35,7 @@ public class AnimalTradePlugin extends JavaPlugin implements Listener{
 		plugin = this;
 		Bukkit.getPluginManager().registerEvents(new TradeListener(), this);
 		Bukkit.getPluginManager().registerEvents(new PlayerListener(), this);
+		Bukkit.getPluginManager().registerEvents(new EntityListener(), this);
 		try{
 			version = Double.valueOf(versions.substring(versions.indexOf("(MC: ")+5,versions.lastIndexOf(".")));
 		}catch(Exception e) {
