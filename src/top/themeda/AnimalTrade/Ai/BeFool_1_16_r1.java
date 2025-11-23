@@ -8,8 +8,9 @@ import org.bukkit.entity.Entity;
 
 import net.minecraft.server.v1_16_R1.EntityInsentient;
 import net.minecraft.server.v1_16_R1.PathfinderGoalSelector;
+import top.themeda.AnimalTrade.AnimalTradePlugin;
 
-public class BeFool_1_16 {
+public class BeFool_1_16_r1 {
 	public static void clear(Entity e) {
 		EntityInsentient en = (EntityInsentient)((CraftEntity)e).getHandle();
 		PathfinderGoalSelector pfd = en.goalSelector;
@@ -20,7 +21,7 @@ public class BeFool_1_16 {
 			Set<?> set = (Set<?>) field.get(pfd);
             set.clear();
         } catch(IllegalAccessException | IllegalArgumentException | NoSuchFieldException | SecurityException ex) {
-            
+            AnimalTradePlugin.log.sendMessage(ex.getMessage());
         }
 	}
 }
